@@ -1,3 +1,4 @@
+// utility function that allows multiple items to be grouped into a quantity value which will allow us to also remove items.
 export const addItemToCart =(cartItems, cartItemToAdd) => {
     // checking to see if current cartItem id matches added cartItem id to create existingCartItem, otherwise returns null.
     const existingCartItem = cartItems.find(
