@@ -17,3 +17,21 @@ export const addItemToCart =(cartItems, cartItemToAdd) => {
         return [...cartItems, {...cartItemToAdd, quantity: 1}]
         // quantity property gets added the first time around since the if statement will not run when it's a new item.
 }
+
+export const removeItemFromCart = (cartItems, cartItemToRemove) => {
+    const existingCartItem = cartItems.find(
+        cartItem => cartItem.id === cartItemToRemove.id
+    )
+        // If existing cartItem quantity is 1, remove.
+    if (existingCartItem.quantity === 1) {
+        // if items with the id are not the ones we want to remove, then we keep in cart. Otherwise, filter out.
+        return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
+    }
+        // If existing cartItem is greater than 1, decrease and keep every other cart item the same
+    return cartItems.map(cartItem =>
+        cartItem.id === cartItemToRemove.id 
+        ? { ...cartItem, quantity: cartItem.quantity - 1 }
+        : cartItem
+    )
+
+}
