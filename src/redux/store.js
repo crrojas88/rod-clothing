@@ -10,4 +10,4 @@ export const store = createStore(rootReducer, applyMiddleware(...middlewares))
 // calls persistStore passing in store to be used with a provider in the application fro storing cart session.
 export const persistor = persistStore(store)
 
-export default { store, persistor }
+// export default { store, persistor }
