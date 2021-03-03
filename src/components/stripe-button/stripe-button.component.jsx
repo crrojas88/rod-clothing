@@ -16,7 +16,7 @@ const StripeCheckoutButton = ({ price }) => {
             name='UNIQLO-NE'
             billingAddress
             shippingAddress
-            image='https://sendeyo.com/en/f3eb2117da'
+            // image='https://sendeyo.com/show/99426a548f'
             description={`Your total is $${price}`}
             amount={priceForStripe}
             panelLabel='Pay Now'
